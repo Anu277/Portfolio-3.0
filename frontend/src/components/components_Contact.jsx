@@ -31,7 +31,7 @@ const Contact = () => {
 
     try {
       // Send form data to backend
-      const response = await fetch('http://localhost:5000/send-email', {
+      const response = await fetch('https://portfolio-3-0-w9cj.onrender.com/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ const Contact = () => {
         </h2>
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/2">
-            <form name="contact" netlify className="space-y-4 text-black">
+            <form name="contact" onSubmit={handleSubmit} className="space-y-4 text-black">
               <div>
                 <label htmlFor="name" className="block mb-2 text-gray-300">
                   Name
