@@ -28,11 +28,11 @@ const App = () => {
   const particlesOptions = {
     particles: {
       number: { value: 60, density: { enable: true, value_area: 800 } },
-      color: { value: "#00FFFF" },
+      color: { value: "#FFA500" },
       shape: { type: "circle" },
       opacity: { value: 0.5, random: false },
       size: { value: 3, random: true },
-      line_linked: { enable: true, distance: 150, color: "#00FFFF", opacity: 0.4, width: 1 },
+      line_linked: { enable: true, distance: 150, color: "#FFA500", opacity: 0.4, width: 1 },
       move: { enable: true, speed: 1, direction: "none", random: false, straight: false, out_mode: "out", bounce: true },
     },
     interactivity: {
@@ -66,12 +66,13 @@ const App = () => {
   return (
     <div className="m-auto text-gray-200 min-h-screen bg-zinc-900">
       <Header />
-      <main className="container mx-auto px-4 relative">
-        <Particles
-          className="absolute"
+      <Particles
+          className="absolute "
           init={particlesInit}
           options={particlesOptions}
         />
+      <main className="container mx-auto px-4 relative">
+        
         <Hero />
         <About />
         <Skills />

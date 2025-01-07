@@ -1,17 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import anu from '../assets/anu.png';
+import anu from '../assets/anu.jpg';
 const Hero = () => {
   return (
     <motion.section
       id="about"
-      className="pt-40"
+      className=" realative pt-40 z-20"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto p-4  rounded-lg shadow-sm shadow-gray-600 backdrop-blur-sm bg-neutral-700 bg-opacity-10">
-        <div className="flex flex-col md:flex-row items-center">
+      <div className="container mx-auto p-4  rounded-lg shadow-sm shadow-gray-600 bg-opacity-10 backdrop-blur-sm bg-neutral-300  z-20">
+        <div className="flex flex-col md:flex-row items-center z-10">
           <motion.div
             className="w-full md:w-1/2 mb-8 md:mb-0 md:mr-12"
             whileHover={{ scale: 1.05 }}
@@ -19,7 +19,7 @@ const Hero = () => {
             <img
               src={anu}
               alt="Landscape"
-              className="filter grayscale m-auto h-auto max-h-96 rounded-lg  brightness-75"
+              className="filter mix-blend-difference m-auto h-auto max-h-96 rounded-full  brightness-100 backdrop-hue-rotate-180"
             />
 
           </motion.div>
