@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
+
 import anu from '../assets/anu.jpg';
 const Hero = () => {
   return (
@@ -23,14 +25,30 @@ const Hero = () => {
             />
 
           </motion.div>
-          
-          <div className="w-full md:w-1/2">
+
+          <div className="w-full md:w-1/2 ">
             <h1 className="text-4xl md:text-7xl font-bold mb-4 text-gray-200 font-serif">Anurag Bheemani</h1>
             <p className="text-xl md:text-2xl mb-6 text-pink-600">ML Developer | MERN Full-Stack Developer</p>
             <p className="text-base md:text-lg mb-6 text-gray-400 leading-relaxed">
               I specialize in building intelligent systems with machine learning and scalable, dynamic web applications using the MERN stack. Passionate about solving real-world problems with AI and modern web technologies.
             </p>
+
+
+            <div className="flex flex-wrap space-x-6">
+              <a href="https://github.com/anu277" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-gray-100 p-2 rounded-md bg-rose-500">
+                <FaGithub size={30} />
+              </a>
+              <a href="https://www.linkedin.com/in/anurag-bheemani" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-gray-100 p-2 rounded-md bg-rose-500">
+                <FaLinkedin size={30} />
+              </a>
+              <a href="https://drive.google.com/file/d/1HuCTVVp4yx4qB21g4ubUPWNLbcQh7Bi0/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-gray-900 flex flex-row items-center p-2 rounded-md bg-rose-500">
+                <FaFileAlt size={30} />
+                <p className='text-xl mx-2'>Resume</p>
+              </a>
+            </div>
+
           </div>
+
         </div>
       </div>
     </motion.section>

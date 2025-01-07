@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { motion } from 'framer-motion';
-import { FaPython, FaReact, FaNodeJs, FaDatabase, FaGithub, FaDocker  } from 'react-icons/fa';
+import { FaPython, FaReact, FaNodeJs, FaDatabase, FaGithub, FaDocker,   } from 'react-icons/fa';
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiTensorflow, SiScikitlearn, SiPandas, SiNumpy } from 'react-icons/si';
 import { IoLogoJavascript } from "react-icons/io";
