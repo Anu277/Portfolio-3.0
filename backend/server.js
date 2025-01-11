@@ -33,7 +33,7 @@ const transporter = nodemailer.createTransport({
 
 //Test
 app.get('/', (req, res) => {
-    res.status(200).send('Server is running!');
+    res.status(200).json({ message: 'Hi from backend' });
 });
 
 
