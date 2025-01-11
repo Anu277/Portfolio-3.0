@@ -31,6 +31,12 @@ const transporter = nodemailer.createTransport({
     },
 });
 
+//Test
+app.get('/', (req, res) => {
+    res.status(200).send('Server is running!');
+});
+
+
 // Send Email Route
 app.post('/send-email', (req, res) => {
     const { name, email, message } = req.body;
