@@ -55,7 +55,7 @@ const Header = () => {
           {renderLink("About", "about")}
           {renderLink("Projects", "projects")}
           <RouterLink to="/working-on" className="-rotate-90 inline-block">
-            <span className="text-shine animate-shine-text">{`<Working>`}</span>
+            <span className="text-shine animate-shine-text">{`<Workings>`}</span>
           </RouterLink>
           {renderLink("Contact", "contact")}
         </nav>
@@ -65,13 +65,14 @@ const Header = () => {
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="md:hidden absolute top-16 left-0 w-full bg-zinc-800 overflow-hidden"
+          className="md:hidden absolute top-16 left-0 w-full bg-gradient-to-b from-black to-zinc-800/70
+overflow-hidden"
         >
           <div className="flex flex-col items-center space-y-4 py-4 h-dvh w-full">
             {renderLink("About", "about", false)}
             {renderLink("Projects", "projects", false)}
             <RouterLink to="/working-on" onClick={toggleMenu} className="hover:text-pink-500 transition-colors">
-              Working On
+            <span className="text-shine animate-shine-text">{`<Workings>`}</span>
             </RouterLink>
             {renderLink("Contact", "contact", false)}
 
