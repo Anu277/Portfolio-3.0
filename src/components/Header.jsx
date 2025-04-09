@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'; // Hamburger and close icons
+import { Link2Icon } from "lucide-react";
 
 const Header = ({ }) => {
   const navigate = useNavigate();
@@ -52,13 +53,13 @@ const Header = ({ }) => {
           <a href="#projects" className=" hover:text-pink-500 transition-colors -rotate-90" onClick={goToProjects}>
             Projects
           </a>
-          <a
-            href="/working-on"
+          <Link
+            to="/working-on"
             // onClick={goToWork} // Assuming goToWork navigates to /working-on
             className="-rotate-90 inline-block"
           >
             <span className="text-shine animate-shine-text">{`<Working>`}</span>
-          </a>
+          </Link>
           <a href="#contact" className=" hover:text-pink-500 transition-colors -rotate-90" onClick={goToContact}>
             Contact
           </a>
