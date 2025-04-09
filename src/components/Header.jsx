@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -53,8 +53,8 @@ const Header = ({ }) => {
             Projects
           </a>
           <a
-            href=""
-            onClick={goToWork} // Assuming goToWork navigates to /working-on
+            href="/working-on"
+            // onClick={goToWork} // Assuming goToWork navigates to /working-on
             className="-rotate-90 inline-block"
           >
             <span className="text-shine animate-shine-text">{`<Working>`}</span>
@@ -86,13 +86,13 @@ const Header = ({ }) => {
             >
               Projects
             </a>
-            <a
-              href=""
+            <Link
+              to="/working-on"
               className=" hover:text-pink-500 transition-colors"
               onClick={toggleMenu}
             >
               Working On
-            </a>
+            </Link>
             <a
               href="#contact"
               className=" hover:text-pink-500 transition-colors"

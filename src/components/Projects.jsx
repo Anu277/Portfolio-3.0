@@ -109,6 +109,8 @@ const Projects = () => {
       );
     });
 
+    
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
