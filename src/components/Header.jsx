@@ -18,18 +18,20 @@ const Header = () => {
     duration: 500,
   };
 
-  const renderLink = (label, to) => {
+  const renderLink = (label, to, rotate = true) => {
+    const baseClass = `${rotate ? "-rotate-90 inline-block" : ""} hover:text-pink-500 transition-colors`;
+  
     return isHomePage ? (
-      <ScrollLink to={to} {...scrollOptions} className="cursor-pointer hover:text-pink-500 transition-colors -rotate-90">
+      <ScrollLink to={to} {...scrollOptions} className={baseClass}>
         {label}
       </ScrollLink>
     ) : (
-      <RouterLink to={`/#${to}`} className="-rotate-90 inline-block hover:text-pink-500 transition-colors">
+      <RouterLink to={`/#${to}`} className={baseClass}>
         {label}
       </RouterLink>
     );
   };
-
+  
   return (
     <div className="fixed z-30 top-0 left-0 right-0 h-auto max-w-3xl md:max-w-14 bg-[#00000091] bg-opacity-10 md:backdrop-blur-sm p-6 md:p-4 md:shadow-md">
       <motion.div
@@ -66,12 +68,13 @@ const Header = () => {
           className="md:hidden absolute top-16 left-0 w-full bg-zinc-800 overflow-hidden"
         >
           <div className="flex flex-col items-center space-y-4 py-4 h-dvh w-full">
-            {renderLink("About", "about")}
-            {renderLink("Projects", "projects")}
-            <RouterLink to="/working-on" onClick={toggleMenu} className="hover:text-pink-500 transition-colors">
-              Working On
-            </RouterLink>
-            {renderLink("Contact", "contact")}
+          {renderLink("About", "about", false)}
+{renderLink("Projects", "projects", false)}
+<RouterLink to="/working-on" onClick={toggleMenu} className="hover:text-pink-500 transition-colors">
+  Working On
+</RouterLink>
+{renderLink("Contact", "contact", false)}
+
           </div>
         </motion.nav>
       </motion.div>
