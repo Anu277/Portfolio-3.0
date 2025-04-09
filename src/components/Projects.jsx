@@ -109,7 +109,7 @@ const Projects = () => {
       );
     });
 
-    
+
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -161,13 +161,13 @@ const Projects = () => {
               <p className="text-lg text-zinc-300 leading-relaxed mb-6">
                 I’m diving deep into <strong className="text-teal-300">AI Subs for VLC</strong>—a game-changing tool that adds real-time, AI-generated subtitles to videos in VLC Media Player. This project boosts accessibility by transcribing speech on the fly, all without touching VLC’s core engine. With <strong className="text-teal-300">60% progress</strong>, it’s shaping up to be a smooth, innovative addition for video enthusiasts!
               </p>
-              <a
-                href=""
-                onClick={goToWork}
+              <Link
+                to="/working-on"
+                // onClick={goToWork}
                 className="inline-flex cursor-pointer items-center px-6 py-3 bg-teal-500 text-white font-semibold rounded-md hover:bg-teal-600 transition-colors duration-300"
               >
                 Explore Details <FaExternalLinkAlt className="ml-2" />
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>
