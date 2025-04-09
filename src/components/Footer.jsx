@@ -11,7 +11,7 @@ const Footer = () => {
   }
   return (
     <footer className="bg-zinc-900 text-zinc-300 py-10 px-15 border-t border-zinc-700">
-      <div className="container mx-auhref px-6">
+      <div className="container mx-auto href px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Navigation Links */}
           <div className="flex flex-col items-center md:items-start">
