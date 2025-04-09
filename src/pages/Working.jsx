@@ -20,6 +20,8 @@ import { useEffect } from 'react';
 const WorkingOn = () => {
   useEffect(() => {
     document.title = 'Working On - Portfolio'; // Update the document title
+    //Take to the top on load
+    window.scrollTo(0, 0);
   }, []); // Empty dependency array to run only once on mount
   
   const project = {

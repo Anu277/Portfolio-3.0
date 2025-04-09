@@ -1,44 +1,32 @@
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link as RouterLink } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Hamburger and close icons
-import { Link2Icon } from "lucide-react";
+import { FaBars, FaTimes } from 'react-icons/fa';
 
-const Header = ({ }) => {
-  const navigate = useNavigate();
-
-  const goToWork = () => {
-    navigate("/working-on"); // ✅ navigate to About page
-  };
-  const goToHome = () => {
-    navigate("/"); // ✅ navigate to Home page
-  };
-  const goToAbout = () => {
-    navigate("/#about"); // ✅ navigate to About page
-  };
-  const goToProjects = () => {
-    navigate("/#projects"); // ✅ navigate to Projects page
-  };
-  const goToContact = () => {
-    navigate("/#contact"); // ✅ navigate to Contact page
-  };
-
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const scrollOptions = {
+    spy: true,
+    smooth: true,
+    offset: -50,
+    duration: 500,
+  };
+
   return (
-    <div className={`fixed z-30 top-0 left-0 right-0 h-auto max-w-3xl md:max-w-14 bg-[#00000091] bg-opacity-10 md:backdrop-blur-sm p-6 md:p-4  md:shadow-md `}>
+    <div className="fixed z-30 top-0 left-0 right-0 h-auto max-w-3xl md:max-w-14 bg-[#00000091] bg-opacity-10 md:backdrop-blur-sm p-6 md:p-4 md:shadow-md">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="container mx-auto flex justify-center text-center items-center"
       >
-        
+
         {/* Hamburger Icon for Mobile */}
         <button
-          className="md:hidden text-2xl focus:outline-none bg-transparent fixed left-0 p-4 "
+          className="md:hidden text-2xl focus:outline-none bg-transparent fixed left-0 p-4"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -46,61 +34,41 @@ const Header = ({ }) => {
         </button>
 
         {/* Navigation - Desktop */}
-        <nav className="hidden md:flex md:flex-col-reverse justify-around min-h-dvh ">
-          <a href="#about" className=" hover:text-pink-500 transition-colors -rotate-90" onClick={goToAbout}>
+        <nav className="hidden md:flex md:flex-col-reverse justify-around min-h-dvh">
+          <ScrollLink to="about" {...scrollOptions} className="cursor-pointer hover:text-pink-500 transition-colors -rotate-90">
             About
-          </a>
-          <a href="#projects" className=" hover:text-pink-500 transition-colors -rotate-90" onClick={goToProjects}>
+          </ScrollLink>
+          <ScrollLink to="projects" {...scrollOptions} className="cursor-pointer hover:text-pink-500 transition-colors -rotate-90">
             Projects
-          </a>
-          <Link
-            to="/working-on"
-            // onClick={goToWork} // Assuming goToWork navigates to /working-on
-            className="-rotate-90 inline-block"
-          >
+          </ScrollLink>
+          <RouterLink to="/working-on" className="-rotate-90 inline-block">
             <span className="text-shine animate-shine-text">{`<Working>`}</span>
-          </Link>
-          <a href="#contact" className=" hover:text-pink-500 transition-colors -rotate-90" onClick={goToContact}>
+          </RouterLink>
+          <ScrollLink to="contact" {...scrollOptions} className="cursor-pointer hover:text-pink-500 transition-colors -rotate-90">
             Contact
-          </a>
+          </ScrollLink>
         </nav>
 
-        {/* Mobile Menu - Animated */}
+        {/* Mobile Menu */}
         <motion.nav
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="md:hidden absolute top-16 left-0 w-full  bg-zinc-800 overflow-hidden"
+          className="md:hidden absolute top-16 left-0 w-full bg-zinc-800 overflow-hidden"
         >
           <div className="flex flex-col items-center space-y-4 py-4 h-dvh w-full">
-            <a
-              href="#about"
-              className=" hover:text-pink-500 transition-colors"
-              onClick={toggleMenu}
-            >
+            <ScrollLink to="about" {...scrollOptions} onClick={toggleMenu} className="cursor-pointer hover:text-pink-500 transition-colors">
               About
-            </a>
-            <a
-              href="#projects"
-              className=" hover:text-pink-500 transition-colors"
-              onClick={toggleMenu}
-            >
+            </ScrollLink>
+            <ScrollLink to="projects" {...scrollOptions} onClick={toggleMenu} className="cursor-pointer hover:text-pink-500 transition-colors">
               Projects
-            </a>
-            <Link
-              to="/working-on"
-              className=" hover:text-pink-500 transition-colors"
-              onClick={toggleMenu}
-            >
+            </ScrollLink>
+            <RouterLink to="/working-on" onClick={toggleMenu} className="hover:text-pink-500 transition-colors">
               Working On
-            </Link>
-            <a
-              href="#contact"
-              className=" hover:text-pink-500 transition-colors"
-              onClick={toggleMenu}
-            >
+            </RouterLink>
+            <ScrollLink to="contact" {...scrollOptions} onClick={toggleMenu} className="cursor-pointer hover:text-pink-500 transition-colors">
               Contact
-            </a>
+            </ScrollLink>
           </div>
         </motion.nav>
       </motion.div>

@@ -1,31 +1,4 @@
-// import { motion } from 'framer-motion';
 
-// const About = () => (
-//   <section id="about" className="py-20 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
-//     <div className="container mx-auto text-center px-6">
-//       <motion.h2
-//         initial={{ opacity: 0, scale: 0.9 }}
-//         whileInView={{ opacity: 1, scale: 1 }}
-//         viewport={{ once: true }}
-//         transition={{ duration: 0.5, ease: 'easeOut' }}
-//         className="text-5xl font-extrabold text-teal-400 drop-shadow-lg"
-//       >
-//         About Me
-//       </motion.h2>
-//       <motion.p
-//         initial={{ opacity: 0, y: 20 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         viewport={{ once: true }}
-//         transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
-//         className="mt-6 text-lg max-w-2xl mx-auto text-gray-300 leading-relaxed"
-//       >
-//         I am a passionate developer with a strong foundation in Machine Learning and Full-Stack Web Development. My goal is to build intelligent systems that solve complex problems and create scalable web applications...
-//       </motion.p>
-//     </div>
-//   </section>
-// );
-
-// export default About;
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import CLOUDS2 from "vanta/dist/vanta.clouds.min";
