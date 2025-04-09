@@ -1,0 +1,38 @@
+@import "tailwindcss";
+body {
+  @apply bg-zinc-900 text-white;
+}
+#hero{
+  background-image: url('./me.jpg');
+}
+*{
+  scroll-behavior: smooth;
+}
+@layer utilities {
+  @keyframes shine-text {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .text-shine {
+    background: linear-gradient(
+      90deg,
+      #fbf5b9 0%,    /* zinc-400 - starting color */
+      #ff0988 50%,   /* pink-500 - shining peak */
+      #B76E79 100%   /* zinc-400 - ending color */
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+
+  .animate-shine-text {
+    animation: shine-text 7s linear infinite;
+  }
+}
