@@ -1,4 +1,4 @@
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -8,11 +8,26 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   const scrollOptions = {
     spy: true,
     smooth: true,
     offset: -50,
     duration: 500,
+  };
+
+  const renderLink = (label, to) => {
+    return isHomePage ? (
+      <ScrollLink to={to} {...scrollOptions} className="cursor-pointer hover:text-pink-500 transition-colors -rotate-90">
+        {label}
+      </ScrollLink>
+    ) : (
+      <RouterLink to={`/#${to}`} className="-rotate-90 inline-block hover:text-pink-500 transition-colors">
+        {label}
+      </RouterLink>
+    );
   };
 
   return (
@@ -23,7 +38,6 @@ const Header = () => {
         transition={{ duration: 0.5 }}
         className="container mx-auto flex justify-center text-center items-center"
       >
-
         {/* Hamburger Icon for Mobile */}
         <button
           className="md:hidden text-2xl focus:outline-none bg-transparent fixed left-0 p-4"
@@ -33,20 +47,15 @@ const Header = () => {
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
 
-        {/* Navigation - Desktop */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex md:flex-col-reverse justify-around min-h-dvh">
-          <ScrollLink to="about" {...scrollOptions} className="cursor-pointer hover:text-pink-500 transition-colors -rotate-90">
-            About
-          </ScrollLink>
-          <ScrollLink to="projects" {...scrollOptions} className="cursor-pointer hover:text-pink-500 transition-colors -rotate-90">
-            Projects
-          </ScrollLink>
+          {renderLink("Home", "")}
+          {renderLink("About", "about")}
+          {renderLink("Projects", "projects")}
           <RouterLink to="/working-on" className="-rotate-90 inline-block">
             <span className="text-shine animate-shine-text">{`<Working>`}</span>
           </RouterLink>
-          <ScrollLink to="contact" {...scrollOptions} className="cursor-pointer hover:text-pink-500 transition-colors -rotate-90">
-            Contact
-          </ScrollLink>
+          {renderLink("Contact", "contact")}
         </nav>
 
         {/* Mobile Menu */}
@@ -57,18 +66,12 @@ const Header = () => {
           className="md:hidden absolute top-16 left-0 w-full bg-zinc-800 overflow-hidden"
         >
           <div className="flex flex-col items-center space-y-4 py-4 h-dvh w-full">
-            <ScrollLink to="about" {...scrollOptions} onClick={toggleMenu} className="cursor-pointer hover:text-pink-500 transition-colors">
-              About
-            </ScrollLink>
-            <ScrollLink to="projects" {...scrollOptions} onClick={toggleMenu} className="cursor-pointer hover:text-pink-500 transition-colors">
-              Projects
-            </ScrollLink>
+            {renderLink("About", "about")}
+            {renderLink("Projects", "projects")}
             <RouterLink to="/working-on" onClick={toggleMenu} className="hover:text-pink-500 transition-colors">
               Working On
             </RouterLink>
-            <ScrollLink to="contact" {...scrollOptions} onClick={toggleMenu} className="cursor-pointer hover:text-pink-500 transition-colors">
-              Contact
-            </ScrollLink>
+            {renderLink("Contact", "contact")}
           </div>
         </motion.nav>
       </motion.div>
