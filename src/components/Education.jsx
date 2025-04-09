@@ -13,7 +13,7 @@ const Education = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-5xl md:text-6xl font-extrabold text-teal-400 uppercase tracking-tight drop-shadow-lg text-center"
+          className="text-4xl md:text-6xl font-extrabold text-teal-400 uppercase tracking-tight drop-shadow-lg text-center"
         >
           Education
         </motion.h2>
@@ -59,7 +59,7 @@ const Education = () => (
         </motion.div>
       </div>
     </div>
-    <div className='my-20 w-3/4 border-b border-zinc-700 mx-auto'></div>
+    <div className='md:my-20 w-3/4 border-b border-zinc-700 mx-auto'></div>
 
   </section>
 );

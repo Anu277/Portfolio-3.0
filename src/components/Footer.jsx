@@ -3,62 +3,60 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   const navigate = useNavigate();
-  const goToWork = () => {
-    navigate('/working-on'); // Navigate to the Working On page
-  }
-  const goToProjects = () => {
-    navigate('/#projects'); // Navigate to the Working On page
-  }
+
   return (
     <footer className="bg-zinc-900 text-zinc-300 py-10 px-15 border-t border-zinc-700">
-      <div className="container mx-auto href px-6">
+      <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Navigation Links */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-xl font-bold text-teal-400 mb-4">Navigate</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="/"
+            <span className="sp flex gap-2">
+              <span>
+                <Link
+                  to="/"
                   className="hover:text-pink-500 transition-colors duration-300"
                 >
                   Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#about"
+                </Link>
+              </span>
+              |
+              <span>
+                <Link
+                  to="/#about"
                   className="hover:text-pink-500 transition-colors duration-300"
                 >
                   About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#projects"
+                </Link>
+              </span>
+              |
+              <span>
+                <Link
+                  to="/#projects"
                   className="hover:text-pink-500 transition-colors duration-300"
                 >
                   Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href=""
-                  onClick={goToWork}
+                </Link>
+              </span>
+              |
+              <span>
+                <Link
+                  to="/working-on"
                   className="hover:text-pink-500 transition-colors duration-300"
                 >
-                  Working On
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/contact"
+                  Working
+                </Link>
+              </span>
+              |
+              <span>
+                <Link
+                  to="/contact"
                   className="hover:text-pink-500 transition-colors duration-300"
                 >
                   Contact
-                </a>
-              </li>
-            </ul>
+                </Link>
+              </span>
+            </span>
           </div>
 
           {/* Social Links */}

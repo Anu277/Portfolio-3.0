@@ -4,14 +4,14 @@ const Experience = () => (
   <section
     className=" bg-gradient-to-b from-zinc-900  to-zinc-900 text-white min-h-lvh flex flex-col items-center justify-around"
   >
-    <div className=' w-1/2 border-b border-pink-400 '></div>
+    <div className='my-10 w-1/2 border-b border-pink-400 '></div>
     <div className="container mx-auto px-6">
       <motion.h2
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="text-5xl md:text-6xl font-extrabold text-pink-500 uppercase tracking-tight drop-shadow-lg text-center"
+        className="text-4xl md:text-6xl font-extrabold text-pink-500 uppercase tracking-tight drop-shadow-lg text-center"
       >
         Experience ✨
       </motion.h2>

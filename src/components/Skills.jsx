@@ -132,8 +132,8 @@ const Skills = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="mb-12"
         >
-          <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 drop-shadow-lg">
-            Skills
+          <h2 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 drop-shadow-lg">
+            SKILLS
           </h2>
           <motion.div
             initial={{ scaleX: 0 }}

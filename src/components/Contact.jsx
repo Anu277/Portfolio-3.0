@@ -82,15 +82,15 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-b from-black/970  to-zinc-900 text-white min-h-screen flex "
+      className="md:py-20 bg-gradient-to-b from-black/970  to-zinc-900 text-white min-h-screen flex "
     >
-      <div className="container mx-auto px-6 max-w-3xl">
+      <div className="container mx-auto px-15 max-w-4xl">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-5xl md:text-6xl font-extrabold text-teal-400 uppercase tracking-tight drop-shadow-lg text-center "
+          className="text-4xl md:text-6xl font-extrabold text-teal-400 uppercase tracking-tight drop-shadow-lg text-center "
         >
           Hit Me Up
         </motion.h2>
@@ -112,7 +112,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
             onSubmit={handleSubmit}
-            className="w-full md:w-1/2 space-y-6"
+            className="w-full md:w-3/4 space-y-6"
           >
             <div className="relative">
               <input

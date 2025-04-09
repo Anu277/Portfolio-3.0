@@ -119,7 +119,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 text-white min-h-screen"
+      className="mt-10 md:mt-0 bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 text-white min-h-screen"
     >
       <div className="container mx-auto px-6">
         <motion.h2
@@ -132,31 +132,40 @@ const Projects = () => {
           Projects
         </motion.h2>
 
-        <div className="w-full py-12 text-white">
+        <div className="w-full md:py-16 text-white">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="bg-zinc-800/80 backdrop-blur-md border-x-4 border-teal-400 rounded-lg p-8 shadow-xl hover:shadow-2xl transition-all duration-300 max-w-5xl mx-auto"
+              className="relative overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 shadow-2xl max-w-5xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-extrabold text-teal-400 uppercase tracking-wide mb-6">
-                Ongoing Project
-              </h2>
-              <p className="text-lg text-zinc-300 leading-relaxed mb-6">
-                I’m diving deep into <strong className="text-teal-300">AI Subs for VLC</strong>—a game-changing tool that adds real-time, AI-generated subtitles to videos in VLC Media Player. This project boosts accessibility by transcribing speech on the fly, all without touching VLC’s core engine. With <strong className="text-teal-300">60% progress</strong>, it’s shaping up to be a smooth, innovative addition for video enthusiasts!
-              </p>
-              <Link
-                to="/working-on"
-                // onClick={goToWork}
-                className="inline-flex cursor-pointer items-center px-6 py-3 bg-teal-500 text-white font-semibold rounded-md hover:bg-teal-600 transition-colors duration-300"
-              >
-                Explore Details <FaExternalLinkAlt className="ml-2" />
-              </Link>
+              {/* 🔮 Internal animated blurred circles */}
+              <div className="absolute -top-20 -left-20 w-60 h-60 bg-pink-500 opacity-30 rounded-full blur-3xl animate-pulse z-0" />
+              <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-purple-500 opacity-30 rounded-full blur-3xl animate-pulse z-0" />
+
+              {/* 🔤 Main content over blurred background */}
+              <div className="relative z-10">
+                <h2 className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-widest mb-6">
+                  Ongoing Project
+                </h2>
+
+                <p className="text-lg text-zinc-300 leading-relaxed mb-8">
+                  I’m diving deep into <strong className="text-white">AI Subs for VLC</strong> — a game-changing tool that adds real-time, AI-generated subtitles to videos in VLC Media Player. This project boosts accessibility by transcribing speech on the fly, all without touching VLC’s core engine. With <strong className="text-white">60% progress</strong>, it’s shaping up to be a smooth, innovative addition for video enthusiasts!
+                </p>
+
+                <Link
+                  to="/working-on"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-500 to-amber-500 text-white font-semibold rounded-full hover:from-amber-500 hover:to-pink-500 transition-all duration-300 shadow-lg"
+                >
+                  Explore Details <FaExternalLinkAlt className="ml-2" />
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>
+
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => (
@@ -186,8 +195,8 @@ const Projects = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`mt-4 inline-flex items-center transition-colors ${index % 2 === 0
-                    ? 'text-pink-500 hover:text-pink-300'
-                    : 'text-teal-400 hover:text-teal-200'
+                  ? 'text-pink-500 hover:text-pink-300'
+                  : 'text-teal-400 hover:text-teal-200'
                   }`}
               >
                 Check It Out <FaExternalLinkAlt className="ml-2" />
