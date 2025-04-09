@@ -85,7 +85,7 @@ const WorkingOn = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6 }}
-            className="text-5xl font-extrabold text-teal-400 drop-shadow-lg"
+            className="text-3xl md:text-5xl font-extrabold text-teal-400 drop-shadow-lg"
           >
             <Rocket className="inline-block mx-2 text-teal-300" size={50} />
             Working On

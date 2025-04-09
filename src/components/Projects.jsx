@@ -132,20 +132,6 @@ const Projects = () => {
           Projects
         </motion.h2>
 
-        {/* <motion.button
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          onClick={goToWork}
-          className="mt-6 cursor-pointer flex items-center gap-2 bg-gradient-to-r from-pink-500 to-teal-400 text-white px-5 py-2 rounded-full shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300 mx-auto block"
-        >
-          <FaExternalLinkAlt className="text-sm" />
-          <span className="uppercase tracking-wider text-sm font-semibold">
-            Currently Working On
-          </span>
-        </motion.button> */}
-
         <div className="w-full py-12 text-white">
           <div className="container mx-auto px-6 text-center">
             <motion.div
