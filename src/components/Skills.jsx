@@ -24,7 +24,8 @@ import {
   SiMongodb,
   SiScikitlearn,
   SiPandas,
-  SiNumpy
+  SiNumpy,
+  SiTensorflow 
 } from "react-icons/si"
 
 import { VscGraph, VscGraphScatter, VscVscode   } from "react-icons/vsc";
@@ -61,6 +62,7 @@ const skills = [
       { name: "NumPy", icon: <SiNumpy className="text-blue-500 text-2xl md:text-3xl" /> },
       { name: "Seaborn", icon: <VscGraphScatter  className="text-teal-400 text-2xl md:text-3xl" /> },
       { name: "Matplotlib", icon: <VscGraph className="text-purple-500 text-2xl md:text-3xl" /> },
+      { name: "Tensorflow ", icon: <SiTensorflow  className="text-purple-500 text-2xl md:text-3xl" /> },
     ],
   },
   {

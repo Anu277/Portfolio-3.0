@@ -13,10 +13,19 @@ import img5 from '../assets/images/5.png';
 import img6 from '../assets/images/6.png';
 import img7 from '../assets/images/7.png';
 import img8 from '../assets/images/8.png';
+import img9 from '../assets/images/9.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
+  {
+    title: 'ZestSync - AI Subs for VLC',
+    description:
+      'Live AI-generated subtitles for VLC Media Player regardless any language to english. Built with Python, OpenAI Whisper, and Lua. No core engine changes needed.',
+    link: 'https://zestsync.netlify.app/',
+    skills: ['Python', 'OpenAi whisper', 'Speech to Text', 'Lua', 'VLC'],
+    image: img9,
+  },
   {
     title: 'Face Sorter App-Photo Organizer',
     description:
@@ -91,6 +100,8 @@ const Projects = () => {
     navigate('/working-on');
   };
 
+  const isTrue = true
+
   useEffect(() => {
     projectRefs.current.forEach((el, index) => {
       gsap.fromTo(
@@ -121,7 +132,7 @@ const Projects = () => {
       id="projects"
       className="mt-10 md:mt-0 bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 text-white min-h-screen"
     >
-      <div className="container mx-auto px-6">
+      <div className={`container mx-auto px-6 `} >
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -132,7 +143,7 @@ const Projects = () => {
           Projects
         </motion.h2>
 
-        <div className="w-full md:py-16 text-white">
+        <div className={`w-full md:py-16 text-white ${isTrue?`hidden`:` visible`}`}>
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -167,7 +178,7 @@ const Projects = () => {
         </div>
 
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="mt-10  md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -187,8 +198,12 @@ const Projects = () => {
                 {project.title}
               </h3>
               <p className="mt-2 text-zinc-300">{project.description}</p>
-              <p className="mt-3 text-sm text-zinc-400">
-                {project.skills.join(' • ')}
+              <p className="mt-3 text-sm text-zinc-400 flex flex-wrap gap-2">
+                {project.skills.map((skill, index) => (
+                  <span className='p-2 bg-zinc-700 rounded-md mr-2' key={index}>
+                    {skill}
+                  </span>
+                ))}
               </p>
               <a
                 href={project.link}
