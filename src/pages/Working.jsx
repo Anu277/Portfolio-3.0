@@ -28,8 +28,8 @@ const WorkingOn = () => {
     title: 'AI Subs for VLC',
     description:
       'Creating a powerful tool that adds real-time AI-generated subtitles to videos playing in VLC Media Player. This enhances accessibility and user experience by automatically transcribing speech without altering VLC’s core engine.',
-    status: 'In Progress',
-    progress: 60,
+    status: 'Completed',
+    progress: 100,
     tools: [
       'Python',
       'SpeechRecognition',
