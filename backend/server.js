@@ -1,9 +1,7 @@
-// server.js
-const express = require('express');
-const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-require('dotenv').config();
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import { Resend } from 'resend';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -12,61 +10,40 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Create Nodemailer transporter with Yahoo SMTP
-// const transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     secure: false,
-//     auth: {
-//         user: process.env.EMAIL_USER,
-//         pass: process.env.EMAIL_PASS,
-//     },
-// });
+// Init Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    secure: false,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-    },
-});
-
-//Test
+// Test route
 app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Hi from backend' });
+  res.status(200).json({ message: 'Hi from backend' });
 });
-
 
 // Send Email Route
-app.post('/send-email', (req, res) => {
-    const { name, email, message } = req.body;
+app.post('/send-email', async (req, res) => {
+  const { name, email, message, subject } = req.body;
 
-    // Create email data
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: process.env.RECIPIENT_EMAIL, // Where the email will be sent
-        subject: 'New Message from Portfolio Contact Form',
-        html: `
-      <h3>Message from: ${name}</h3>
-      <p>Email: ${email}</p>
-      <h4>Message:</h4>
-      <p>${message}</p>
-    `,
-    };
-
-
-    // Send email
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-            return res.status(500).send('Error in sending email');
-        }
-        console.log('Email sent: ' + info.response);
-        return res.status(200).send('Email sent successfully');
+  try {
+    const data = await resend.emails.send({
+      from: process.env.EMAIL_USER,          // Sender (Resend default or verified domain)
+      to: process.env.RECIPIENT_EMAIL,       // Your inbox
+      subject: subject || `New message from ${name}`, // Dynamic subject (fallback included)
+      html: `
+        <h3>Message from: ${name}</h3>
+        <p>Email: ${email}</p>
+        <h4>Message:</h4>
+        <p>${message}</p>
+      `,
     });
+
+    console.log('Email sent:', data);
+    res.status(200).send('Email sent successfully');
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).send('Error sending email');
+  }
 });
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+  console.log(`✅ Server running on render : ${port}`);
 });
