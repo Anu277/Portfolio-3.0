@@ -28,8 +28,9 @@ app.post('/send-email', async (req, res) => {
       to: process.env.RECIPIENT_EMAIL,       // Your inbox
       subject: subject || `New message from ${name}`, // Dynamic subject (fallback included)
       html: `
-        <h3>Message from: ${name}</h3>
-        <p>Email: ${email}</p>
+        <h3>Message from website user <b>${Subject}</b>: ${name}</h3>
+        <h2>Email:</h2> <p>${email}</p>
+        </br>
         <h4>Message:</h4>
         <p>${message}</p>
       `,
