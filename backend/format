@@ -1,0 +1,7 @@
+frontend:
+body: JSON.stringify({
+  name: "Anurag",
+  email: "anu@example.com",
+  subject: "🔥 Contact from Software Site",
+  message: "Hello, I’d like to know more..."
+})
