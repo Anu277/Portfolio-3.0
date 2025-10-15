@@ -8,9 +8,24 @@ import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "Anurag Bheemani - Full Stack Developer & AI Engineer",
+  description: "Computer Science student at JNTU Hyderabad specializing in Full Stack Development, AI/ML, and Backend Engineering. Experience with MERN stack, Python, AI chatbots, and scalable web applications.",
+  keywords: "Anurag Bheemani, Full Stack Developer, AI Engineer, MERN Stack, Python, Machine Learning, React, Node.js, MongoDB, JavaScript, Backend Developer, Computer Science, JNTU Hyderabad, Telangana India",
+  authors: [{ name: "Anurag Bheemani" }],
+  creator: "Anurag Bheemani",
+  publisher: "Anurag Bheemani",
+  robots: "index, follow",
+  openGraph: {
+    title: "Anurag Bheemani - Full Stack Developer & AI Engineer",
+    description: "Computer Science student specializing in Full Stack Development, AI/ML, and Backend Engineering",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Anurag Bheemani - Full Stack Developer & AI Engineer",
+    description: "Computer Science student specializing in Full Stack Development, AI/ML, and Backend Engineering",
+  },
 }
 
 export default function RootLayout({
