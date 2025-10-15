@@ -1,0 +1,60 @@
+ANURAG BHEEMANI
+anuragbheemani.27@gmail.com | linkedin/in/anurag-bheemani | github/anu277 | + Ph: +919390940626 | Telangana, India
+
+EDUCATION	
+
+
+JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY HYDERABAD	CGPA: 6.98/10.00
+Bachelor of Technology	Dec 2021-Jul 2025
+Relevant Coursework: Data Structures & Algorithms, Artificial Intelligence, Machine Learning, Databases, Web Development.
+
+EXPERIENCE	
+
+
+GLOOM DEV - Backend and Full Stack Intern	Jul 2024 – Dec 2025
+•	Built & deployed gloom-dev.com and 2 scalable MERN e-commerce platforms; integrated Razorpay with 50+ secure transactions 
+•	Designed optimized MongoDB schemas & JWT authentication; reduced API latency by ~20%.
+•	Integrated LangChain + Google GenAI chatbot for PDF queries, boosting engagement & efficiency
+
+PROJECTS	
+
+
+Zest Sync Player v2.0 - AI Subtitle Generator and Translator | Website	Sep 2025
+• AI video player generating real-time subtitles in 90+ transcription & 14 translation languages
+• Optimized to deliver 20× real-time performance with GPU/CPU acceleration under 600MB RAM
+Tech: GenAI, Python, Whisper, Hugging Face
+
+Face Sorter App-Photo Organizer | Website	Mar 2025
+• Built mobile app to auto-organize 100+ photos by faces with ~70% correct grouping
+• Integrated React Native frontend with FastAPI backend & secure metadata storage
+Tech: AI, Python, React Native, FastAPI, MongoDB, Google Cloud
+
+Hand Sign Recognition with Machine Learning | Link	Feb 2025
+• Developed real-time hand sign recognition using MediaPipe & Random Forest
+• Achieved 86% accuracy for gesture-based control in good lighting conditions
+Tech: Machine Learning, Python, MediaPipe, OpenCV
+
+Music Recommendation System | Website	Dec 2024
+• Interactive recommendation engine using similarity-based filtering
+• Streamlit UI with dynamic album posters via Spotify API to boost engagement
+Tech: ML, Python, Scikit-learn, Numpy, Pandas, Spotify API
+
+Telecom Churn Prediction | Link	Sep 2024
+• Designed churn prediction model with feature engineering & hyperparameter tuning
+• Achieved 89% accuracy to help telecoms retain high-risk customers
+Tech: Python, Scikit-learn, Numpy, Pandas
+
+TECHNIICAL SKILLS
+
+Languages & Databases: Python, JavaScript, SQL, MongoDB, MySQL, Firebase
+Frameworks & DevOps: Node.js, Express.js, React.js, TypeScript, FastAPI, Streamlit, GitHub CI/CD, AWS EC2, Firebase, GCP, Microservices Architecture, RESTful API, 
+AI/ML: Scikit-learn, TensorFlow, PyTorch, Keras, Deep Learning (CNN/RNN), NLP, Transformers, LangChain, Pinecone/Chroma, LLM Fine-Tuning (LoRA/QLoRA, PEFT) , Agentic AI
+Soft Skills: Problem Solving, Team Collaboration, Communication, Adaptability, Critical Thinking, Creativity
+Certifications & Awards: GloomDev Internship Certificate, ML/IoT/Deep Learning, SAP ABAP (Edunet), Code Unnati Innovation Marathon 2025 (Edunet), Exceptional Intern Award (WebCook Software Solutions)
+
+LEADERSHIP AND ACTIVITIES
+
+• Placement Coordinator: Coordinated 10+ placement drives for 100+ students 		             Dec 2023 - Jun 2025
+• Tech Fest Head: Led 24 members across 6 groups for technical event execution		           May 2024 - Jun 2024
+• Coding Club Mentor (2024): Trained 30+ students in problem-solving & DSA fundamentals     May 2024 - Jun 2024
+
